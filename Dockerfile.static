@@ -1,0 +1,9 @@
+# vim: set syntax=dockerfile:
+FROM tianon/true
+
+MAINTAINER Mario Carrion "info@carrion.ws"
+
+COPY ca-certificates.crt /etc/ssl/certs/ca-certificates.crt
+COPY ["main", ".env", "/app/"]
+
+CMD ["/app/main"]
